@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\core",
+    "\\core\\buffer",
+    "\\core\\game_data",
+    "\\core\\mcts",
+    "\\models",
+    "\\proposed_mcts",
+    "\\utils"
+  ],
+  "SelectedNode": "\\main_int.py",
+  "PreviewInSolutionExplorer": false
+}

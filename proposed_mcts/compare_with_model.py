@@ -48,7 +48,7 @@ def predict_from_states_train_mode(states, actions, model):
            device = states.device), torch.rand((l, 1), device = states.device)
 
 if __name__ == '__main__':
-    count_of_replications = 2
+    count_of_replications = 100
 
     envs = [50, 100, 250, 500, 750]     #C_T
     approaches = ['GPU', 'CPU_GPU_P2', 'CPU_GPU_P5', 'CPU_GPU_P10', 'CPU_GPU_S']
@@ -163,7 +163,7 @@ if __name__ == '__main__':
                     )
                     data.append((datetime.datetime.now() - start).total_seconds())
             result = np.average(data)
-            write_to_file('CPU_GPU_P' + str(count_of_cpus) + '_b_' + str(count_of_envs), data)
+            write_to_file('CPU_GPU_P' + str(count_of_cpus) + '_t_' + str(count_of_envs), data)
             print('CPU_GPU_P', count_of_cpus, result)
 
         data = []
@@ -179,5 +179,5 @@ if __name__ == '__main__':
                 )
                 data.append((datetime.datetime.now() - start).total_seconds())
         result = np.average(data)
-        write_to_file('CPU_GPU_S_b_' + str(count_of_envs), data)
+        write_to_file('CPU_GPU_S_t_' + str(count_of_envs), data)
         print('CPU_GPU_S', result)

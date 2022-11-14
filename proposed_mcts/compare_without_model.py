@@ -154,7 +154,7 @@ if __name__ == '__main__':
                     )
                     data.append((datetime.datetime.now() - start).total_seconds())
             result = np.average(data)
-            write_to_file('CPU_GPU_P' + str(count_of_cpus) + '_b_' + str(count_of_envs), data)
+            write_to_file('CPU_GPU_P' + str(count_of_cpus) + '_t_' + str(count_of_envs), data)
             print('CPU_GPU_P', count_of_cpus, result)
 
         data = []
@@ -170,5 +170,5 @@ if __name__ == '__main__':
                 )
                 data.append((datetime.datetime.now() - start).total_seconds())
         result = np.average(data)
-        write_to_file('CPU_GPU_S_b_' + str(count_of_envs), data)
+        write_to_file('CPU_GPU_S_t_' + str(count_of_envs), data)
         print('CPU_GPU_S', result)
